@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nota: 1
+  periodo: 1
+  ano: 2014-06-12
+  prova_id: 
+  disciplina_id: 
+  matricula_id: 
+
+two:
+  nota: 1
+  periodo: 1
+  ano: 2014-06-12
+  prova_id: 
+  disciplina_id: 
+  matricula_id: 

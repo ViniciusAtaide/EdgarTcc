@@ -1,0 +1,21 @@
+
+<h4>Disciplina: <span class="label label-default"><%= @disciplina.nome %></span></h4>
+<h4>Turma: <span class="label label-default"><%= @turma.sub %></span></h4>
+<h4>Série: <span class="label label-default"><%= @turma.serie %> </span></h4>
+<table class="table table-stripped">
+    <tr>
+        <th></th>
+        <th>1a Avaliacao</th>
+        <th>2a Avaliacao</th>
+        <th>3a Avaliacao</th>
+        <th>4a Avaliacao</th>    
+    <% @avaliacoes.each do |avaliacao| %>    
+    <tr>
+        <td><%= matricula.aluno.nome %></td>
+        <% @turma.planos.each do |plano| %>
+            <% if (plano.avaliacao == @turma.matricula.avaliacao) %>
+                <td><%= plano.avaliacao %></td>
+            <% end %>
+        <% end %>
+    <% end %>
+</table>

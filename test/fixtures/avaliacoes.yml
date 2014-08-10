@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipoaval: MyString
+  nota: 1.5
+  matriculadisciplina_id: 
+
+two:
+  tipoaval: MyString
+  nota: 1.5
+  matriculadisciplina_id: 
