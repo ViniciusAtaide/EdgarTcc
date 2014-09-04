@@ -6,4 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-a = Aluno.new 
+a = Aluno.create nome: 'vinicius'
+a2 = Aluno.create nome: 'edgar'
+d = Disciplina.create nome: 'portugues'
+d2 = Disciplina.create nome: 'matematica'
+m = Matricula.create aluno: a, ano_letivo: 2014
+m2 = Matricula.create aluno: a2, ano_letivo: 2014
+p = Professor.create nome: 'marcos', cpf: '090.923.493-94'
+p2 = Professor.create nome: 'paulo', cpf: '091.921.492-92'
+t = Turma.create turno: 'manha', descricao: '7 fundamental'
+t2 = Turma.create turno: 'manha', descricao: '2 medio'
+s = Secretario.create email: 'secretario@example.com', password: 'senha123'
+s2 = Secretario.create email: 'admin@example.com', password: 'password', superadmin: true
+td = Turmadisciplina.create turma: t, professor: p, disciplina: d
+td2 = Turmadisciplina.create turma: t2, professor: p2, disciplina: d2
+md = Matriculadisciplina.create matricula: m, turmadisciplina: td
+md2 = Matriculadisciplina.create matricula: m2, turmadisciplina: td2
+a = Avaliacao.create tipoavaliacao: 'prova', nota: 8.2, matriculadisciplina: md
+a2 = Avaliacao.create tipoavaliacao: 'prova', nota: 8.4, matriculadisciplina: md2

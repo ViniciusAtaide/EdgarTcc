@@ -11,64 +11,65 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711120517) do
+ActiveRecord::Schema.define(version: 20140903020615) do
 
   create_table "alunos", force: true do |t|
-    t.string   "nome"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "nome"
   end
 
   create_table "avaliacoes", force: true do |t|
-    t.string   "tipoaval"
-    t.float    "nota"
-    t.integer  "matriculadisciplina_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "tipoavaliacao"
+    t.float   "nota"
+    t.integer "matriculadisciplina_id"
   end
 
-  add_index "avaliacoes", ["matriculadisciplina_id"], name: "index_avaliacoes_on_matriculadisciplina_id"
-
   create_table "disciplinas", force: true do |t|
-    t.string   "nome"
-    t.integer  "cargahoraria"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "nome"
+    t.integer "cargahoraria"
   end
 
   create_table "matriculadisciplinas", force: true do |t|
-    t.integer  "matricula_id"
-    t.integer  "turmadisciplina_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "matricula_id"
+    t.integer "turmadisciplina_id"
   end
 
   add_index "matriculadisciplinas", ["matricula_id"], name: "index_matriculadisciplinas_on_matricula_id"
   add_index "matriculadisciplinas", ["turmadisciplina_id"], name: "index_matriculadisciplinas_on_turmadisciplina_id"
 
   create_table "matriculas", force: true do |t|
-    t.integer  "aluno_id"
-    t.integer  "ano_letivo"
-    t.date     "datacancelamento"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "aluno_id"
+    t.integer "ano_letivo"
+    t.date    "datacancelamento"
   end
 
   add_index "matriculas", ["aluno_id"], name: "index_matriculas_on_aluno_id"
 
   create_table "professores", force: true do |t|
-    t.string   "nome"
-    t.string   "cpf"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "nome"
+    t.string "cpf"
   end
 
+  create_table "secretarios", force: true do |t|
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,     null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.boolean  "superadmin",             default: false, null: false
+  end
+
+  add_index "secretarios", ["email"], name: "index_secretarios_on_email", unique: true
+  add_index "secretarios", ["reset_password_token"], name: "index_secretarios_on_reset_password_token", unique: true
+
   create_table "turmadisciplinas", force: true do |t|
-    t.integer  "turma_id"
-    t.integer  "professor_id"
-    t.integer  "disciplina_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer "turma_id"
+    t.integer "professor_id"
+    t.integer "disciplina_id"
   end
 
   add_index "turmadisciplinas", ["disciplina_id"], name: "index_turmadisciplinas_on_disciplina_id"
@@ -76,10 +77,8 @@ ActiveRecord::Schema.define(version: 20140711120517) do
   add_index "turmadisciplinas", ["turma_id"], name: "index_turmadisciplinas_on_turma_id"
 
   create_table "turmas", force: true do |t|
-    t.string   "descricao"
-    t.string   "turno"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "descricao"
+    t.string "turno"
   end
 
 end
