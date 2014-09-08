@@ -1,0 +1,13 @@
+█ [ /home/vinicius/Documentos/Projetos/edgartcc ] cd
+Please enter a path following the 'cd' command
+
+█ [ /home/vinicius/Documentos/Projetos/edgartcc ] pew
+/bin/sh: 1: pew: not found
+
+█ [ /home/vinicius/Documentos/Projetos/edgartcc ] pow
+/bin/sh: 1: pow: not found
+
+█ [ /home/vinicius/Documentos/Projetos/edgartcc ] pw
+/bin/sh: 1: pw: not found
+
+ 

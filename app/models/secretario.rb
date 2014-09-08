@@ -1,5 +1,6 @@
 class Secretario
   include Mongoid::Document
+  self.primary_key = 'id'
   include Mongoid::Timestamps
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

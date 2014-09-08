@@ -1,6 +1,10 @@
 class Aluno
   include Mongoid::Document
-
-  field :nome, type: String
+  self.primary_key = 'id' 
+  field :nome
 	has_many :matriculas
+
+	def display_name
+		"#{nome}"
+	end
 end

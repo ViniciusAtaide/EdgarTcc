@@ -1,5 +1,6 @@
 class Matricula
   include Mongoid::Document
+  self.primary_key = 'id'
 
   field :ano_letivo, type: Integer
   field :datacancelamento, type: Date

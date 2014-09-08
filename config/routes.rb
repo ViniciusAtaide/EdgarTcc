@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :secretarios
   ActiveAdmin.routes(self)
 
-  root 'welcome#index'
+  root 'admin/dashboard#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

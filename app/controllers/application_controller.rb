@@ -4,9 +4,5 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   def authenticate_active_admin_user!
     authenticate_secretario!
-    print 'entrou'
-    unless current_secretario.superadmin?
-      redirect_to root_path
-    end
   end
 end

@@ -1,17 +1,17 @@
 ActiveAdmin.register Aluno do
 
+  permit_params :nome
   
-  # See permitted parameters documentation:
-  # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #  permitted = [:permitted, :attributes]
-  #  permitted << :other if resource.something?
-  #  permitted
-  # end
+  form do |f|
+    f.inputs "Campos" do
+    	f.input :nome	
+      # f.inputs do
+      	# f.has_many :matriculas, allow_destroy: true, heading: 'Matriculas', new_record: false do |mf|
+      		# mf.input :ano_letivo
+      	# end
+      # end 
+    # end
+    f.actions
+  end
   
 end

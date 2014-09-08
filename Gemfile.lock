@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/elia/activeadmin-mongoid.git
+  revision: 9b1858441acb1f118e07f04381ed107afee575c8
+  branch: rails4
+  specs:
+    activeadmin-mongoid (0.2.1)
+      activeadmin (>= 0.6.1, < 2)
+      mongoid (>= 4.0.0.beta1, < 5)
+      rails (~> 4.0)
+
+GIT
   remote: https://github.com/activeadmin/activeadmin
   revision: 28c5ca569acddc162e1179326872da17a934dbb7
   specs:
@@ -54,6 +64,7 @@ GEM
       thor
     bson (2.3.0)
     builder (3.2.2)
+    cancancan (1.9.2)
     choice (0.1.6)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -194,6 +205,8 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  activeadmin-mongoid!
+  cancancan (~> 1.9)
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)

@@ -1,6 +1,15 @@
 class Professor 
   include Mongoid::Document
+  self.primary_key = 'id'
 
-  field :nome, type: String
-  field :cpf, type: String
+  field :nome
+  field :matricula_estadual
+  field :formacao
+  field :email
+  field :telefone
+  field :cpf
+
+  def display_name
+    "#{nome}"
+  end
 end

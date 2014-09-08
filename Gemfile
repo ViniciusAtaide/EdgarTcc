@@ -34,12 +34,15 @@ gem 'mongoid'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'activeadmin-mongoid', github: 'elia/activeadmin-mongoid', branch: 'rails4'
+
 group :development do 
 	gem 'rails-erd'
 end
 # Use unicorn as the app server
 # gem 'unicorn'
 
+gem 'cancancan', '~> 1.9'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
