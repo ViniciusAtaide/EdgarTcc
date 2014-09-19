@@ -5,5 +5,9 @@ class Turmadisciplina
   belongs_to :turma
   belongs_to :professor
   belongs_to :disciplina
-  belongs_to :matriculadisciplina
+  has_many :matriculadisciplina
+
+  def display_name
+  	"#{id}"
+  end
 end

@@ -10,7 +10,7 @@ ActiveAdmin.register Aluno do
       		# mf.input :ano_letivo
       	# end
       # end 
-    # end
+    end
     f.actions
   end
   
