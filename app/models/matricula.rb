@@ -5,6 +5,7 @@ class Matricula
   field :ano_letivo, type: Integer
   field :datacancelamento, type: Date
   belongs_to :aluno
+  has_many :matriculadisciplinas
 
   def display_name
   	"#{id}"

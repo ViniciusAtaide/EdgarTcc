@@ -9,6 +9,8 @@ class Professor
   field :telefone
   field :cpf
 
+  has_one :turmadisciplina
+
   def display_name
     "#{nome}"
   end

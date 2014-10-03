@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails Tcc: development" uuid="2f3c1f95-154b-417b-8fb7-7d175308d5eb">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Vagrant\rails-dev-box\Tcc\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails Tcc: test" uuid="fe78261b-e8d2-46d0-a3d5-84e96093eca8">

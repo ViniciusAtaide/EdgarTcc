@@ -6,6 +6,7 @@ class Disciplina
   field :nome
   field :cargahoraria, type: Integer
 
+  has_one :turmadisciplina
   def display_name
     "#{nome}"
   end

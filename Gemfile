@@ -37,7 +37,8 @@ gem 'mongoid'
 gem 'activeadmin-mongoid', github: 'elia/activeadmin-mongoid', branch: 'rails4'
 
 group :development do 
-	gem 'rails-erd'
+  gem 'rails-erd'
+  gem 'faker'
 end
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -49,3 +50,4 @@ gem 'cancancan', '~> 1.9'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+#

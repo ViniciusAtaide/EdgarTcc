@@ -1,26 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-a = Aluno.create nome: 'vinicius'
-a2 = Aluno.create nome: 'edgar'
-d = Disciplina.create nome: 'portugues'
-d2 = Disciplina.create nome: 'matematica'
-m = Matricula.create aluno: a, ano_letivo: 2014
-m2 = Matricula.create aluno: a2, ano_letivo: 2014
-p = Professor.create nome: 'marcos', cpf: '090.923.493-94'
-p2 = Professor.create nome: 'paulo', cpf: '091.921.492-92'
-t = Turma.create turno: 'Noite', serie: 'Fundamental', turma: 'A'
-t2 = Turma.create turno: 'Tarde', descricao: 'Medio', turma: 'B'
-s = Secretario.create email: 'secretario@example.com', password: 'senha123'
-s2 = Secretario.create email: 'admin@example.com', password: 'password', superadmin: true
-td = Turmadisciplina.create turma: t, professor: p, disciplina: d
-td2 = Turmadisciplina.create turma: t2, professor: p2, disciplina: d2
-md = Matriculadisciplina.create matricula: m, turmadisciplina: td
-md2 = Matriculadisciplina.create matricula: m2, turmadisciplina: td2
-Avaliacao.create tipoavaliacao: 'prova', nota: 8.2, matriculadisciplina: md
-Avaliacao.create tipoavaliacao: 'prova', nota: 8.4, matriculadisciplina: md2
+ALUNOS = 16
+MATRICULAS = ALUNOS
+PROFESSORES = 8
+DISCIPLINAS = 4
+TURMAS = 2
+MATRICULADISCIPLINAS = MATRICULAS * DISCIPLINAS
+TURMADISCIPLINAS = TURMAS * MATRICULADISCIPLINAS
+(0..ALUNOS).to_a.each { Aluno.create nome: Faker::Name.name }
+(0..MATRICULAS).to_a.each_with_index { |n, i| Matricula.create ano_letivo: 2014, aluno: Aluno.all.entries[i] }
+(0..PROFESSORES).to_a.each { Professor.create nome: Faker::Name.name, matricula_estadual: Faker::Number.number(8), formacao: Faker::Lorem.words(10), email: Faker::Internet.email, telefone: Faker::PhoneNumber.phone_number, cpf: Faker::Number.number(30)}
+(0..DISCIPLINAS).to_a.each { Disciplina.create nome: Faker::Name.name, cargahoraria: Random.rand(40) }
+(0..TURMAS).to_a.each_with_index { |n, i| Turma.create turno: ['Manhã', 'Tarde', 'Noite'].to_a[i] , serie: Random.rand(8), turma: ('a'..'z').to_a[i] }
+(0..TURMADISCIPLINAS).to_a.each_with_index { |n, i| Turmadisciplina.create turma: Turma.all.to_a.cycle.next, professor: Professor.all.to_a.each, disciplina: Disciplina.all.to_a.each }
+# (0..MATRICULADISCIPLINAS).to_a.each { Matriculadisciplina.create matricula: Matricula.all.to_a.each, turmadisciplina: Turmadisciplina.all.to_a.each }
