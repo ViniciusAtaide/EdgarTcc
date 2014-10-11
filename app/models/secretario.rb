@@ -36,5 +36,5 @@ class Secretario
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
 
-  field :superadmin, type: Boolean
+  field :superadmin, type: Boolean, default: false
 end

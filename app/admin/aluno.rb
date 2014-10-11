@@ -1,7 +1,13 @@
 ActiveAdmin.register Aluno do
 
   permit_params :nome
-  
+
+  index as: :table do
+    column :nome
+    column :matricula
+    actions
+  end
+
   form do |f|
     f.inputs "Campos" do
     	f.input :nome	
@@ -13,5 +19,12 @@ ActiveAdmin.register Aluno do
     end
     f.actions
   end
-  
+
+
+  show do
+    attributes_table do
+      row :nome
+      row :matricula
+    end
+  end
 end

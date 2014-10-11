@@ -8,6 +8,6 @@ class Matricula
   has_many :matriculadisciplinas
 
   def display_name
-  	"#{id}"
+  	"#{aluno.nome}"
   end
 end

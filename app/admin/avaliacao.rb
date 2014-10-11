@@ -1,6 +1,5 @@
 ActiveAdmin.register Avaliacao do
   index do
-    column :id
     column :tipoavaliacao
     column :nota
     column :matriculadisciplina
