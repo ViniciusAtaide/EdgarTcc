@@ -1,0 +1,17 @@
+h1 Encontre aqui a Turma
+
+=select_tag 'turno', options_for_select(@turnos), class: 'form-control'
+=select_tag 'turmas', options_for_select(['Turmas'], 'Turmas'), class: 'form-control'
+
+table#resultados
+  thead
+    tr
+      th Nome
+      th N1
+      th N2
+      th N3
+      th R1
+      th R2
+      th R3
+  tbody#corpo
+      

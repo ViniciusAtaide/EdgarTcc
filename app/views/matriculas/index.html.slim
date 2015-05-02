@@ -1,8 +1,7 @@
-<% @matriculas.each do |matricula| %>
-	<p>Nome:<%= matricula.aluno.nome %></p>
-	<p>Serie:<%= matricula.turma.serie %>, <%= matricula.turma.sub %></p>
-	<p>Turno: <%= matricula.turma.turno %></p>
-	<p>Responsável: <%= matricula.aluno.responsavel %></p>
-    <%= link_to "Avaliações do aluno: #{matricula.aluno.nome}", matricula_avaliacaos_path(matricula) %>
-<% end %>
+-@matriculas.each do |matricula| %>
+  p Nome: = matricula.aluno.nome
+  p Serie: #{ matricula.turma.serie }, #{matricula.turma.sub}
+  p Turno: #{ matricula.turma.turno }
+  p Responsável: #{matricula.aluno.responsavel}
+  =link_to "Avaliações do aluno: #{matricula.aluno.nome}", matricula_avaliacaos_path(matricula)
 

@@ -4,15 +4,16 @@ class TurmasController < ApplicationController
   end
 
   def show
+    if params[:turma] && params[:serie] && params[:turno]
+      param_turma = params[:turma]
+      param_serie = params[:serie].to_i
+      param_turno = params[:turno]
 
-    turma = params[:turma]
-    print turma
-    render json: Aluno.where(matricula:
-                 Matricula.where(matriculadisciplina:
-                 Matriculadisciplina.where(turmadisciplina:
-                 Turmadisciplina.where(turma:
-                 Turma.where(serie: '123')
-           ))))
+      turma = Turma.where(serie: param_serie, turma: param_turma, turno: param_turno).first
 
+      render json: turma
+    else
+      render json: Aluno.find(params[:id])
+    end
   end
 end

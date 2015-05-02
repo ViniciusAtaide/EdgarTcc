@@ -11,11 +11,4 @@ ActiveAdmin.register Turma do
     f.actions
   end
 
-  show do
-    panel "Alunos" do
-      table_for turma.turmadisciplina.matriculadisciplinas do
-        column :matricula
-      end
-    end
-  end
 end

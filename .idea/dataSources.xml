@@ -10,7 +10,7 @@
     <data-source source="LOCAL" name="Rails Tcc: test" uuid="fe78261b-e8d2-46d0-a3d5-84e96093eca8">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Vagrant\rails-dev-box\Tcc\db\test.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>

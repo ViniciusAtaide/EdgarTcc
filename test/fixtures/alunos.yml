@@ -1,7 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nome: MyString
+  nome: Marcos
+  pai: Joao
+  data_nascimento: <%= 5.days.ago.to_date %>
+  naturalidade: Pessoense
+  endereco: Mar Mediterraneo
+  telefone: 5102-0194
+  matricula: one
 
-two:
-  nome: MyString

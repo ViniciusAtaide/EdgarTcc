@@ -4,10 +4,10 @@ class Matriculadisciplina
 
   belongs_to :matricula
   belongs_to :turmadisciplina
+
   has_many :avaliacoes
 
   def display_name
-    "#{matricula.aluno.nome} - #{matricula.id}"
+    "#{ matricula.aluno.nome } - #{ turmadisciplina.disciplina }"
   end
-
 end

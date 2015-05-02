@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  tipoaval: MyString
-  nota: 1.5
-  matriculadisciplina_id: 
+tipoavals = ['n1', 'n2', 'n3' 'r1', 'r2', 'r3'].cycle
+  
 
-two:
-  tipoaval: MyString
-  nota: 1.5
-  matriculadisciplina_id: 
+6.times do |n|
+  aval_<%= n %>:
+    tipoaval: <%= tipoavals.next %>
+    nota: <%= n + 0.5 %>
+    matriculadisciplina: one
+end

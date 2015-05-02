@@ -14,4 +14,12 @@ class Professor
   def display_name
     "#{nome}"
   end
+
+  validates :nome, presence: true
+  validates :matricula_estadual, presence: true
+  validates :formacao, presence: true
+  validates :email, presence: true
+  validates :telefone, presence: true
+  validates :cpf, presence: true
+
 end

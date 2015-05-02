@@ -3,12 +3,15 @@ class Turmadisciplina
   self.primary_key = 'id'
 
   field :descricao, type: String
+  field :disciplina
+  field :cargahoraria
+
   belongs_to :turma
   belongs_to :professor
-  belongs_to :disciplina
+
   has_many :matriculadisciplinas
 
   def display_name
-  	"#{id}"
+    "#{id}"
   end
 end
