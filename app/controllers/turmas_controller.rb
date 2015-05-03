@@ -1,6 +1,13 @@
 class TurmasController < ApplicationController
   def by_turno
-    render json: Turma.where(turno: params[:turno])
+    turmas = [
+      {Turno: "Manhã"},
+      {}
+
+    ]
+
+
+    render json: {Turma.where(turno: params[:turno])}
   end
 
   def show

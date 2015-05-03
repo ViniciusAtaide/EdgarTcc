@@ -1,8 +1,8 @@
 ActiveAdmin.register Turmadisciplina  do
-  menu label: 'Plano de Disciplina'
+  menu label: 'Turmas e Professores'
   permit_params :turma_id, :professor_id, :disciplina, :cargahoraria, :matriculadisciplina, :descricao
 
-  index title: 'Plano de Disciplina' do
+  index title: 'Turmas e Professores' do
     column :turma
     column :professor
     column :disciplina
