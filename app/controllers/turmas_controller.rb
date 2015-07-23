@@ -5,8 +5,6 @@ class TurmasController < ApplicationController
       {}
 
     ]
-
-
     render json: {Turma.where(turno: params[:turno])}
   end
 
